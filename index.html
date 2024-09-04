@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["¡Hola caos!", "¡Hola cosmos!"],
+                nombre: "Mi nombre es Lorem Ipsum",
+                motivo: "Decidí tomar este ramo ya que el año pasado fue muy interesante la parte de diseño web y aprender lo básico de HTML, por lo que me gustaría poder profundizar más para poder crear páginas y experimentar. Quiero completar esta evaluación porque la encuentro entretenida, y un poco desafiante. Independiente del resultado, seguire en el curso, porque lo que hemos visto refuerza mi gusto del diseño web.</span>.",
+                etc: "Ya revisé mi primera nota y la verdad es que esperaba un 7, aunque fue buena nota igualmente. No estoy segura de que bajo la nota.",
+            };
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length); //math.random=numero random, math.floor tira para abajo el numero*, puedo multiplicar el math.random * x, para que alterne entre los valores de x (en este caso texto.saludo.length) -- este funcion automatiza el random
+            console.log(aleatorio); // visualizar el aletorio
+            $("h1").html(texto.saludo[aleatorio]); //var texto, opcion saludo, dentro de saludo aleatorio
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            function revelador() {
+                $("#alla").toggleClass("escondido"); //toggleClass 
+            }
+            $("span").hover(revelador); //de speamear, .como aparece
+        </script>
+    </body>
+</html>

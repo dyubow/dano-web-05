@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html">Hola</a>
+                <a href="page-1.html" class="activo">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1>Selecciona</h1>
+            <select> 
+                <option>todos</option> <!-- se puede cambiar el texto adentro y agregarle value con la etiqueta-->
+                <option value="unos">silly</option>
+                <option>otros</option>
+            </select>
+            <div class="unos">Soy de los unos</div>
+            <div class="otros">Soy de los otros</div>
+            <div class="unos">Soy de los unos</div>
+            <div class="otros">Soy de los otros</div>
+            <div class="unos">Soy de los unos</div>
+            <div class="otros">Soy de los otros</div>            
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $("select").change(function () { //$-de que se fija/selecciona - .(accion)
+                valor = $("select").val(); //valor
+                if (valor == "unos") { //si es unos - muestra unos y esconde otros
+                    $(".unos").show();
+                    $(".otros").hide();
+                } else if (valor == "otros"){// sie es otros - muestra otros y esconde unos
+                    $(".unos").hide();
+                    $(".otros").show();
+                } else { //si es cualquier otro valor - muestra ambos
+                    $(".unos").show();
+                    $(".otros").show();
+                }
+            });          
+        </script>
+    </body>
+</html>
